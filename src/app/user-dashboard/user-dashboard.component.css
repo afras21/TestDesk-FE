@@ -54,3 +54,9 @@ h3 {
     margin: 0px;
     height: 429px;
 }
+.prd {
+    display: flex;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+}
