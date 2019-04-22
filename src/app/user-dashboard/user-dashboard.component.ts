@@ -51,7 +51,11 @@ export class UserDashboardComponent implements OnInit {
   submit() {
     console.log('this.val1',this.username);
     const payload: any = {};
-    payload.username = localStorage.getItem('name');
+
+    // validation
+    if(this.cval1 && this.cval1 && this.textVal) {
+
+      payload.username = localStorage.getItem('name');
       payload.one = this.val1;
       payload.two = this.textVal;
       payload.three = this.cval1;
@@ -63,5 +67,9 @@ export class UserDashboardComponent implements OnInit {
     localStorage.setItem('two',this.cval1);
     localStorage.setItem('three',this.textVal);
     this._router.navigate(['../preview'], { relativeTo: this._activatedRoute });
+
+    } else {
+      window.alert('Fill All The Fields');
+    }
   }
 }

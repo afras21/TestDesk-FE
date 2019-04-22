@@ -40,7 +40,9 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('name',this.loginForm.value.email.toString());
             this._router.navigate(['/dash']);
           },
-          error => { }
+          error => { 
+              window.alert('Email or password is wrong');
+          }
         );
     }
   }
