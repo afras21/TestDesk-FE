@@ -9,9 +9,9 @@
     display: flex;
 }
 .headerLogo{
-    font-family: 'Lobster', cursive;
+    font-family: 'Casual', cursive;
     font-size: 4rem;
     margin-left: 20px;
-    color: white;
+    color: #ff0303;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
