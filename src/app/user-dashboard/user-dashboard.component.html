@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="headerbar">
+    <span>Test Desk</span>
+  </div>
+  <div class="boom">
+    <!-- <h1>Hello {{username}}</h1> <h2>Welcom</h2> -->
+    <h1>Instructions</h1> 
+    <h3>1. Attend all the questions in the test</h3>
+    <h3>2. Submit the test before leaving the page</h3>
+    <h3>3. Tab Switching will be monitored</h3>
+    <h3>4. Each section carry their specified negative marks</h3>
+    
+    <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+  </div>
+</div>
+<div class="container">
+    <div class="boom">
+      <div class="ui-g12 ui-g-nopad">
+        <h2>1. Choose the world's Largest Mammal</h2>
+        <div ><p-radioButton name="group1" value="Lion" label="Lion" [(ngModel)]="val1" inputId="opt1"></p-radioButton></div>
+        <div ><p-radioButton name="group1" value="Dinosour" label="Dinosour" [(ngModel)]="val1" inputId="opt2"></p-radioButton></div>
+        <div ><p-radioButton name="group1" value="Girafee" label="Girafee" [(ngModel)]="val1" inputId="opt3"></p-radioButton></div>     
+        <div ><p-radioButton name="group1" value="Blue Whale" label="Blue Whale" [(ngModel)]="val1" inputId="opt3"></p-radioButton></div>
+    </div>   
+   </div>
+
+
+</div>
+
+<div class="container">
+  <div class="boom">
+    <div class="ui-g12 ui-g-nopad">
+      <h2>2. Select all the sugar substances that are listed below</h2>
+      <div ><p-checkbox name="group1" value="Gluctose" label="Gluctose" [(ngModel)]="cval1" inputId="c1"></p-checkbox></div>
+      <div ><p-checkbox name="group1" value="Sucrose" label="Sucrose" [(ngModel)]="cval1" inputId="c2"></p-checkbox></div>
+      <div ><p-checkbox name="group1" value="Fructose" label="Fructose" [(ngModel)]="cval1" inputId="c3"></p-checkbox></div>     
+      <div ><p-checkbox name="group1" value="Maltose" label="Maltose" [(ngModel)]="cval1" inputId="c4"></p-checkbox></div>
+  </div>   
+ </div>
+</div>
+
+<div class="container">
+  <div class="boom">
+    <div class="ui-g12 ui-g-nopad">
+      <h2>3. Write a Short note on Big Bang Theory </h2>  Max 120 Words
+      <textarea [(ngModel)]="textVal" class="inp"></textarea>
+
+    </div>   
+ </div>
+</div>
+
+<div class="container">
+  <div class="boom1">
+    <button mat-raised-button color="primary" (click)="submit()">Preview</button>
+    </div>   
+ </div>
