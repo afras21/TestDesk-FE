@@ -17,6 +17,11 @@ export class MyserviceService {
       observe:'body'
     });
   }
+  answerGet(body:any){
+    return this._http.post(this.api_url+ '/users/answerget', body,{
+      observe:'body'
+    });
+  }
 
   login(body:any){
     return this._http.post(this.api_url+ '/users/login', body,{

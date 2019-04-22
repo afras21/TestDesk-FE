@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { forEach } from '@angular/router/src/utils/collection';
+
+
 
 interface City {
   name: string;
@@ -15,13 +18,14 @@ interface City {
 
 export class UserDashboardComponent implements OnInit {
   cities1: any;
+  preview:boolean = false;
   selectedCity1: City;
   username = '';
   val1;
   cval1;
   textVal;
   constructor(private myService: MyserviceService,
-    private _router: Router) {
+    private _router: Router, private _activatedRoute: ActivatedRoute) {
     this.myService.getUserName()
       .subscribe(
         data => this.username = data.toString(),
@@ -47,13 +51,17 @@ export class UserDashboardComponent implements OnInit {
   submit() {
     console.log('this.val1',this.username);
     const payload: any = {};
-    payload.username = this.username;
-    payload.one = this.val1;
-    payload.two = this.textVal;
-    payload.three = this.cval1;
+    payload.username = localStorage.getItem('name');
+      payload.one = this.val1;
+      payload.two = this.textVal;
+      payload.three = this.cval1;
 
     this.myService.answerStore(payload).subscribe();
 
     console.log('############', payload);
+    localStorage.setItem('one',this.val1);
+    localStorage.setItem('two',this.cval1);
+    localStorage.setItem('three',this.textVal);
+    this._router.navigate(['../preview'], { relativeTo: this._activatedRoute });
   }
 }
