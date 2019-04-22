@@ -6,8 +6,16 @@
 export const environment = {
   production: false,
    HOST: {
-    COOKIE_LINK: 'http://localhost:3000/api',
-    link: 'http://localhost:3000/api',
-    HOST_LINK: 'http://localhost:3000/api'
+    COOKIE_LINK: 'http://localhost:3000',
+    link: 'http://localhost:3000',
+    HOST_LINK: 'http://localhost:3000'
   },
+  // HOST: {
+  //   COOKIE_LINK: '  https://testdeskbe.herokuapp.com/',
+  //   link: '  https://testdeskbe.herokuapp.com/',
+  //   HOST_LINK: '  https://testdeskbe.herokuapp.com/'
+  // },
+
+
+
 };
