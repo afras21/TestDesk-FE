@@ -22,7 +22,6 @@ export class UserDashboardComponent implements OnInit {
   textVal;
   constructor(private myService: MyserviceService,
     private _router: Router) {
-      
     this.myService.getUserName()
       .subscribe(
         data => this.username = data.toString(),
@@ -46,19 +45,15 @@ export class UserDashboardComponent implements OnInit {
     this._router.navigate(['/main/login']);
   }
   submit() {
-    const params = [
-      {
-        username: this.username,
-        q1: this.val1,
-        q2: this.cval1,
-        q3: this.textVal
-      }
-    ]
+    console.log('this.val1',this.username);
+    const payload: any = {};
+    payload.username = this.username;
+    payload.one = this.val1;
+    payload.two = this.textVal;
+    payload.three = this.cval1;
 
-      this.myService.answerStore(params)
-        .subscribe(
-        );
+    this.myService.answerStore(payload).subscribe();
 
-    console.log('############', params);
+    console.log('############', payload);
   }
 }

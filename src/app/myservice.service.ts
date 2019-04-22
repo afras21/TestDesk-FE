@@ -11,14 +11,14 @@ export class MyserviceService {
       observe:'body'
     });
   }
+  answerStore(body:any){
+    return this._http.post('http://localhost:3000/users/answerstore', body,{
+      observe:'body'
+    });
+  }
 
   login(body:any){
     return this._http.post('http://localhost:3000/users/login', body,{
-      observe: 'body'
-    });
-  }
-  answerStore(body: any) {
-    return this._http.post('http://localhost:3000/users/answerStore', body, {
       observe: 'body'
     });
   }
